@@ -1,13 +1,12 @@
 # korovod-spack-packages
 
-This repository contains a collection of [Spack](https://spack.io/) packages to
-build the Korovod suite.
+This repository contains a collection of [Spack](https://spack.io/) packages to build the Korovod suite.
 
 The following packages can be installed using this repository:
 
 ## nanotron
 
-https://github.com/korovod/nanotron
+https://github.com/korovod/kenotron
 
 ```bash
 spack install py-nanotron
