@@ -1,6 +1,6 @@
-from spack.package import *
+from spack_repo.builtin.build_systems.python import PythonPackage, CudaPackage
 
-# https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/py-torch-nvidia-apex/package.py
+from spack.package import *
 
 class PyDatastates(PythonPackage, CudaPackage):
     """Efficient asynchronous checkpointing using CUDA copy engines

@@ -1,11 +1,13 @@
+from spack_repo.builtin.build_systems.python import PythonPackage
+
 from spack.package import *
 
 class PyNanotron(PythonPackage):
     """Minimalistic large language model 3D-parallelism training.
     """
 
-    homepage = "https://github.com/korovod/nanotron"
-    git = "https://github.com/korovod/nanotron.git"
+    homepage = "https://github.com/korovod/kenotron"
+    git = "https://github.com/korovod/kenotron.git"
 
     maintainers("thomas-bouvier")
 
@@ -13,8 +15,7 @@ class PyNanotron(PythonPackage):
 
     version("main", branch="main")
 
-    variant("examples", default=True, description="Build with example scripts support")
-    variant("nanosets", default=True)
+    variant("nanosets", default=True, description="Dataset processing tools")
     variant("datastates", default=False, description="Efficient asynchronous checkpointing using CUDA copy engines")
 
     depends_on("python@3.9:3.11")
@@ -29,12 +30,13 @@ class PyNanotron(PythonPackage):
     depends_on("py-tqdm", type=("build", "run"))
     depends_on("py-wandb", type=("build", "run"))
     depends_on("py-datasets", type=("build", "run"), when="@0.5:")
+    depends_on("py-transformers", type=("build", "run"))
+    depends_on("py-flash-attn@2.7:", type=("build", "run"))
 
-    depends_on("py-transformers", type=("build", "run"), when="+examples")
-    depends_on("py-flash-attn@2.7:", type=("build", "run"), when="+examples")
-
+    # Nanosets
     depends_on("py-transformers", type=("build", "run"), when="+nanosets")
     depends_on("py-numba", type=("build", "run"), when="+nanosets")
     depends_on("py-datatrove", type=("build", "run"), when="+nanosets")
 
+    # DataStates
     depends_on("py-datastates", type=("build", "run"), when="+datastates")
