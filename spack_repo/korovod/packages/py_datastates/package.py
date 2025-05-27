@@ -1,4 +1,5 @@
-from spack_repo.builtin.build_systems.python import PythonPackage, CudaPackage
+from spack_repo.builtin.build_systems.cuda import CudaPackage
+from spack_repo.builtin.build_systems.python import PythonPackage
 
 from spack.package import *
 
