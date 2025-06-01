@@ -36,7 +36,7 @@ class PyNanotron(PythonPackage):
     # Nanosets
     depends_on("py-transformers", type=("build", "run"), when="+nanosets")
     depends_on("py-numba", type=("build", "run"), when="+nanosets")
-    depends_on("py-datatrove", type=("build", "run"), when="+nanosets")
+    depends_on("py-datatrove +io +processing", type=("build", "run"), when="+nanosets")
 
     # DataStates
     depends_on("py-datastates", type=("build", "run"), when="+datastates")
