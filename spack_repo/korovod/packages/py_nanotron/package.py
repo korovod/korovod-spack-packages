@@ -18,7 +18,7 @@ class PyNanotron(PythonPackage):
     variant("nanosets", default=True, description="Dataset processing tools")
     variant("datastates", default=False, description="Efficient asynchronous checkpointing using CUDA copy engines")
 
-    depends_on("python@3.9:3.11")
+    depends_on("python@3.9:")
 
     depends_on("py-setuptools", type="build")
     depends_on("py-torch@2:", type=("build", "run"))
