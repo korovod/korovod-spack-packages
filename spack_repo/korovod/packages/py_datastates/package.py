@@ -16,16 +16,17 @@ class PyDatastates(PythonPackage, CudaPackage):
 
     version("main", branch="main")
 
-    with default_args(type=("build")):
-        depends_on("py-setuptools")
-        depends_on("py-packaging")
-        depends_on("py-pip")
+    depends_on("cxx", type="build")
+
+    depends_on("py-setuptools", type=("build"))
+    depends_on("py-packaging", type=("build"))
+    depends_on("py-pip", type=("build"))
 
     with default_args(type=("build", "link", "run")):
         depends_on("python@3:")
         depends_on("py-torch@2: +cuda")
+        depends_on("py-pybind11", type=("build", "link", "run"))
 
-    depends_on("py-pybind11", type=("build", "link", "run"))
     depends_on("cuda@12:")
 
     def setup_build_environment(self, env):
