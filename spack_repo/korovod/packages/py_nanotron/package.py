@@ -3,7 +3,7 @@ from spack_repo.builtin.build_systems.python import PythonPackage
 from spack.package import *
 
 class PyNanotron(PythonPackage):
-    """Minimalistic large language model 3D-parallelism training.
+    """Minimalistic large language model 4D-parallelism training.
     """
 
     homepage = "https://github.com/korovod/kenotron"
@@ -18,12 +18,12 @@ class PyNanotron(PythonPackage):
     variant("nanosets", default=True, description="Dataset processing tools")
     variant("datastates", default=False, description="Efficient asynchronous checkpointing using CUDA copy engines")
 
-    depends_on("python@3.9:")
+    depends_on("python@3.11:")
 
     depends_on("py-setuptools", type="build")
     depends_on("py-torch@2.5:", type=("build", "run"))
     depends_on("py-pyyaml", type=("build", "run"))
-    depends_on("py-numpy@2:", type=("build", "run"))
+    depends_on("py-numpy@2.1:", type=("build", "run"))
     depends_on("py-packaging", type=("build", "run"))
     depends_on("py-safetensors", type=("build", "run"))
     depends_on("py-dacite", type=("build", "run"))
