@@ -14,6 +14,7 @@ class PyNanotron(PythonPackage):
     license("Apache-2.0")
 
     version("main", branch="main")
+    version("0.4.0", tag="v0.4.0", commit="f2c83832cc787621388bc54afbc0f003ac2af9fc")
 
     variant("nanosets", default=True, description="Dataset processing tools")
     variant("datastates", default=False, description="Efficient asynchronous checkpointing using CUDA copy engines")
