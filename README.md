@@ -39,3 +39,10 @@ These packages are broken upstream. This repository patches them (this is transp
 ### htmldate & dateutil
 
 This release https://github.com/dateutil/dateutil/releases/tag/2.9.0.post0 pins `setuptools_scm` to `<8` which is bad because not compatible with Python 3.13. There should be a new release without such a constraint. Waiting for it. Project seems unmaintained.
+
+### kenlm
+
+Python 3.13 breaks the build
+
+- https://github.com/kpu/kenlm/pull/468
+- https://github.com/kpu/kenlm/pull/473
