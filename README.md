@@ -10,18 +10,18 @@ spack repo add --name korovod https://github.com/korovod/korovod-spack-packages.
 
 The following packages can be installed using this repository:
 
-### nanotron
+### kenotron
 
 https://github.com/korovod/kenotron
 
 ```bash
-spack install py-nanotron
+spack install py-kenotron
 ```
 
-If you want to install C++ extensions for Nanotron in one shot, use the following command:
+If you want to install C++ extensions for Kénotron in one shot, use the following command:
 
 ```bash
-spack install py-nanotron +datastates
+spack install py-kenotron +datastates
 ```
 
 ### datastates

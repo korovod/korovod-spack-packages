@@ -2,7 +2,7 @@ from spack_repo.builtin.build_systems.python import PythonPackage
 
 from spack.package import *
 
-class PyNanotron(PythonPackage):
+class PyKenotron(PythonPackage):
     """Minimalistic large language model 4D-parallelism training.
     """
 
